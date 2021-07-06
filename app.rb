@@ -12,15 +12,13 @@ loop do
 	puts khotbun
 	puts "\n"
 	break if khotbun.die?
-
 	num = rand(100)
-    if num <= 80
-	puts "Jin Sakai deflect khotbun attack, HP #{jin.hitpoint()}"
-	
-	puts "\n"
+   	if num <= 80
+		puts "Jin Sakai deflect khotbun attack, HP #{jin.hitpoint()}"
+		puts "\n"
 	else
-	khotbun.attack(jin)
-	puts jin
+		khotbun.attack(jin)
+		puts jin
 	break if jin.die?
 	
 	end	
