@@ -4,6 +4,7 @@ class Person
 		@name = name
 		@hitpoint = hitpoint
 		@attack_damage = attack_damage
+		
 	end
 	
 	def to_s
@@ -15,10 +16,20 @@ class Person
 	   other_person.take_damage(@attack_damage)
 	   puts "#{name} attacks #{other_person.name} with #{attack_damage} damage" 
    end
+
+   
    
    def take_damage(attack_damage)
 	@hitpoint -= attack_damage
    end
+
+   def support(hitpoint)
+	@hitpoint += 20
+   end
+
+    def heal(other_person)
+	other_person.support(@hitpoint)
+	end
    
    def die?
 		if @hitpoint <= 0
@@ -27,5 +38,8 @@ class Person
 		end
    end
 end
+
+
+
 
 
